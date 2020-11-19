@@ -1,0 +1,15 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+node_modules
+node_modules_old
+*.log
+.idea
+.vscode/
+output
+build/accessKeyId.js
+build/accessKeySecret.js
+build/SecretId.js
+build/SecretKey.js
+.history
+proxy.config.js
+langs/
+.DS_Store
