@@ -4,7 +4,7 @@ node_modules_old
 *.log
 .idea
 .vscode/
-output
+dist
 build/accessKeyId.js
 build/accessKeySecret.js
 build/SecretId.js
