@@ -5,11 +5,6 @@ node_modules_old
 .idea
 .vscode/
 dist
-build/accessKeyId.js
-build/accessKeySecret.js
-build/SecretId.js
-build/SecretKey.js
 .history
-proxy.config.js
 langs/
 .DS_Store
