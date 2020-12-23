@@ -1,18 +1,13 @@
-/* eslint-disable no-underscore-dangle */
 const path = require('path');
 const webpack = require('webpack');
-// const _ESLintPlugin = require('eslint-webpack-plugin');
-const _MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const _StyleLintPlugin = require('stylelint-webpack-plugin');
+const _MiniCssExtractPlugin = require('mini-css-extract-plugin'); // eslint-disable-line
+const _StyleLintPlugin = require('stylelint-webpack-plugin'); // eslint-disable-line
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-// const { htmlWebpackPlugins } = require('./path');
+const { htmlWebpackPlugins } = require('./path.config');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer'); // 优化体积的时候启用
 
-// const ESLintPlugin = new _ESLintPlugin({
-//   overrideConfigFile: path.resolve(__dirname, '../.eslintrc'),
-//   context: path.resolve(__dirname, '../src/js'),
-//   files: '**/*.js',
-// });
+// const isDev = process.env.NODE_ENV === 'development';
 
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
   filename: 'css/[name][contenthash:8].css',
@@ -25,10 +20,13 @@ const StyleLintPlugin = new _StyleLintPlugin({
   files: '**/*.less',
 });
 
-module.exports = [
+const plugins = [
   new webpack.ProgressPlugin(),
   MiniCssExtractPlugin,
   StyleLintPlugin,
   new CleanWebpackPlugin(),
   new FriendlyErrorsWebpackPlugin(),
-];
+  // new BundleAnalyzerPlugin(),
+].concat(htmlWebpackPlugins);
+
+module.exports = plugins;
