@@ -5,6 +5,7 @@ node_modules_old
 .idea
 .vscode/
 dist
+build
 .history
 langs/
 .DS_Store
