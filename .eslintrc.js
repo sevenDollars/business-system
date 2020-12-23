@@ -33,5 +33,6 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'no-restricted-syntax': 0,
   },
 };

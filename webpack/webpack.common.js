@@ -2,7 +2,7 @@ const path = require('path');
 const loaders = require('./loaders');
 const plugins = require('./plugins');
 const resolve = require('./resolve');
-const { entry, htmlWebpackPlugins } = require('./path.config');
+const { entry } = require('./path.config');
 
 module.exports = {
   entry,
@@ -13,6 +13,6 @@ module.exports = {
     filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
   },
-  plugins: plugins.concat(htmlWebpackPlugins),
+  plugins,
   resolve,
 };

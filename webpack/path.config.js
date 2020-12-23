@@ -18,7 +18,7 @@ const setMPI = () => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, `../publish/${pageName}.html`),
         filename: `${pageName}.html`, // 打包后的文件名
-        chunks: ['vendors', pageName],
+        chunks: ['reactBase', 'common', pageName],
         inject: true,
         minify: {
           html5: true,
