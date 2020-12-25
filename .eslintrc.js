@@ -1,4 +1,5 @@
 const resolve = require('./webpack/resolve');
+const env = require('./webpack/env');
 
 module.exports = {
   env: {
@@ -34,5 +35,7 @@ module.exports = {
       },
     ],
     'no-restricted-syntax': 0,
+    'generator-star-spacing': 'off',
+    'no-debugger': env === 'production' ? 'error' : 'off',
   },
 };

@@ -1,7 +1,8 @@
-// const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const threadLoader = require('thread-loader');
+
+// const env = require('./env');;
 
 const workerPool = {
   workers: 2, // 产生的 worker 的数量，默认是 (cpu 核心数 - 1)
@@ -10,7 +11,6 @@ const workerPool = {
   poolRespawn: false,
   poolTimeout: 2000, // 闲置时定时删除 worker 进程，默认为 500ms，可以设置为无穷大， 这样在监视模式(--watch)下可以保持 worker 持续存在
   poolParallelJobs: 50,
-  // name: 'my-pool',
 };
 
 // 每个 worker 大概都要花费 600ms，为了防止启动 worker 时的高延迟，对 worker 池预热。
